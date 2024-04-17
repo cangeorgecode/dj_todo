@@ -1,0 +1,11 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+
+<div class="container pt-4">
+<ul>
+  <li>Title: {{ todo.title }}</li>
+  <li>Description: {{ todo.description }}</li>
+  <li>Completed: {{ todo.isDone }}</li>
+</ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<div class="container text-center pt-4">
+    {% for t in todo %}
+    <div class="row align-items-center">
+    
+      <div class="col">
+        <a href="{% url 'readtodo' t.id %}">{{ t.title }}</a>
+      </div>
+      <div class="col">
+        <a href="{% url 'updatetodo' t.id %}">Update</a>
+      </div>
+      <div class="col">
+        <a href="{% url 'deletetodo' t.id %}">Delete</a>
+      </div>
+    
+    </div>
+    {% endfor %}
+    <br>
+    <div class="container pt-4">
+      yela: {{ completed }}
+      <p>Progress: {{ total }}</p>
+      <p>Math: {{ progress }}%</p>
+    </div>
+  </div>
+{% endblock content %}
